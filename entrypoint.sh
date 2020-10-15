@@ -1,10 +1,7 @@
-# make the file executable
+#make executable
 chmod +x entrypoint.sh
 
 #!/bin/sh -l
-
-echo "Hello $1"   # uses the who-to-greet input variable to print "Hello [who-to-greet]" in the log file
-time=$(date)      # gets the current time and sets it as an output variable that actions running later in a job can use.
-echo "::set-output name=time::$time" # sets the action's output parameter using the workflow syntaxgit add action.yml entrypoint.sh Dockerfile README.md
-git commit -m "My first action is ready"
-git tag -a -m "My first action release" v1
+echo "Hello $1" # Uses who to greet input variable to print "Hello [who to greet] in the log file"
+time=$(date)    # gets time and set it as a output variable that actions run later in the job can use
+echo "::set-output name=time::$time"  # sets the action's output paramenter using workflow  sintaxis
